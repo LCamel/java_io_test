@@ -14,8 +14,8 @@ public class Util {
     }
     public static void generateFile(File f, long len) throws IOException {
         RandomAccessFile raf = new RandomAccessFile(f, "rw");
-        byte[] ba = Util.generate(2000);
-        for (int i = 0; i < (len / 2000); i++) {
+        byte[] ba = Util.generate(1000000);
+        for (int i = 0; i < (len / ba.length); i++) {
             raf.write(ba);
         }
         raf.close();
